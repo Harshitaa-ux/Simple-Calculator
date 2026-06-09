@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(
+        to bottom,
+        #4facfe,
+        #00c6ff,
+        #0077b6
+    );
+}
+
+/* Calculator */
+
+.calculator{
+    background:rgba(255,255,25,0.15);
+    backdrop-filter:blur(12px);
+    padding:25px;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,0.3);
+    box-shadow:0 0 25px rgba(0,0,0,0.25);
+    z-index:10;
+}
+
+.calculator h2{
+    text-align:center;
+    color:white;
+    margin-bottom:15px;
+}
+
+#display{
+    width:100%;
+    height:70px;
+    margin-bottom:15px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    font-size:28px;
+    text-align:right;
+    padding:10px;
+    background:rgba(255,255,255,0.25);
+    color:white;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,75px);
+    gap:10px;
+}
+
+button{
+    height:65px;
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+    background:rgba(255,255,255,0.2);
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.35);
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+.zero{
+    grid-column:span 2;
+}
+
+/* Bubbles */
+
+.bubble{
+    position:absolute;
+    bottom:-100px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.35);
+    animation:float 10s linear infinite;
+}
+
+.b1{
+    width:25px;
+    height:25px;
+    left:10%;
+}
+
+.b2{
+    width:40px;
+    height:40px;
+    left:25%;
+    animation-delay:2s;
+}
+
+.b3{
+    width:20px;
+    height:20px;
+    left:50%;
+    animation-delay:4s;
+}
+
+.b4{
+    width:35px;
+    height:35px;
+    left:75%;
+    animation-delay:1s;
+}
+
+.b5{
+    width:28px;
+    height:28px;
+    left:90%;
+    animation-delay:3s;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+/* Fish */
+
+.fish{
+    position:absolute;
+    font-size:50px;
+}
+
+.fish1{
+    animation:swim1 15s linear infinite;
+}
+
+.fish2{
+    animation:swim2 18s linear infinite;
+}
+
+@keyframes swim1{
+    from{
+        left:-100px;
+        top:35%;
+    }
+
+    to{
+        left:110%;
+        top:45%;
+    }
+}
+
+@keyframes swim2{
+    from{
+        left:110%;
+        top:65%;
+    }
+
+    to{
+        left:-100px;
+        top:55%;
+    }
+}n
